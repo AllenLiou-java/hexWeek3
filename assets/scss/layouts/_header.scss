@@ -1,0 +1,95 @@
+.header {
+    background-color: $red;
+
+    .mobile {
+        display: none;
+
+        @media (max-width: 576px) {
+            display: block;
+
+            .logo {
+                padding: 16px 15px;
+
+                a {
+                    display: block;
+                    width: 80px;
+                    height: 48px;
+                    background: url('/assets/images/logo-white.png') no-repeat;
+                    background-size: contain;
+                    // 圖片取代文字
+                    text-indent: 101%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+
+            .navbar {
+                display: flex;
+                flex-wrap: wrap;
+
+                li {
+                    width: 50%;
+                    text-align: center;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    border: 1px solid #fff;
+
+                    a {
+                        color: #fff;
+                        font-family: 'Noto Sans TC', sans-serif;
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        @include flexbox(space-between);
+
+        @media (max-width: 576px) {
+            display: none;
+        }
+
+        @include mobile {
+            display: none;
+        }
+
+        .logo {
+            a {
+                display: block;
+                width: 80px;
+                height: 48px;
+                background: url('/assets/images/logo-white.png') no-repeat;
+                background-size: contain;
+                // 圖片取代文字
+                text-indent: 101%;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+
+        .navbar {
+            @include flexbox();
+
+            li {
+                margin-left: 64px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                transition: .3s;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                a {
+                    color: #fff;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
