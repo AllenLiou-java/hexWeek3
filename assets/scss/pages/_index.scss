@@ -200,6 +200,12 @@
                 // h3 {
                 //     word-break: break-all;
                 // }
+
+                @media (max-width: 1024px) {
+                    h3 {
+                        font-size: 32px;
+                    }
+                }
             }
         }
     }
